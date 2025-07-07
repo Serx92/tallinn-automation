@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 
 
-test.only('Negative login test', async ({ page }) => {
+test('Negative login test', async ({ page }) => {
   await page.goto('https://fe-delivery.tallinn-learning.ee/signin');
   // Fill in the username and password fields
   await page.getByTestId('username-input').fill('username123');
@@ -12,7 +12,7 @@ test.only('Negative login test', async ({ page }) => {
   await expect(page).toHaveTitle(/Playwright/);
 });
 
-test.only('Authorization error pop-up is displayed', async ({ page }) => {
+test('Authorization error pop-up is displayed', async ({ page }) => {
   await page.goto('https://fe-delivery.tallinn-learning.ee/signin');
   // Fill in the username and password fields
   await page.getByTestId('username-input').fill('username123');
